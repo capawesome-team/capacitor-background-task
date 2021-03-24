@@ -9,10 +9,16 @@ import Capacitor
 public class BackgroundTaskPlugin: CAPPlugin {
     private let implementation = BackgroundTask()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc public func beforeExit(_ call: CAPPluginCall) {
+        implementation.beforeExit(call.callbackId)
+        call.resolve()
+    }
+
+    @objc public func finish(_ call: CAPPluginCall) {
+        guard let callbackId = call.getString("taskId") else {
+            call.reject("No taskId was provided.")
+            return
+        }
+        implementation.finish(callbackId)
     }
 }
