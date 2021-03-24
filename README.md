@@ -62,9 +62,10 @@ App.addListener('appStateChange', ({ isActive }) => {
 
 <docgen-index>
 
-- [`beforeExit(...)`](#beforeexit)
-- [`finish(...)`](#finish)
-- [Interfaces](#interfaces)
+* [`beforeExit(...)`](#beforeexit)
+* [`finish(...)`](#finish)
+* [Interfaces](#interfaces)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
@@ -74,16 +75,24 @@ App.addListener('appStateChange', ({ isActive }) => {
 ### beforeExit(...)
 
 ```typescript
-beforeExit(cb: any) => CallbackID
+beforeExit(cb: Function) => CallbackID
 ```
 
-| Param    | Type             |
-| -------- | ---------------- |
-| **`cb`** | <code>any</code> |
+Call this method when the app moves to the background.
+It allows the app to continue running a task in the background.
+
+On **iOS** this method should be finished in less than 3 minutes.
+
+Only available for Android and iOS.
+
+| Param    | Type                                          |
+| -------- | --------------------------------------------- |
+| **`cb`** | <code><a href="#function">Function</a></code> |
 
 **Returns:** <code>string</code>
 
----
+--------------------
+
 
 ### finish(...)
 
@@ -91,19 +100,53 @@ beforeExit(cb: any) => CallbackID
 finish(options: FinishOptions) => void
 ```
 
+Finish the current background task.
+The OS will put the app to sleep.
+
+Only available for Android and iOS.
+
 | Param         | Type                                                    |
 | ------------- | ------------------------------------------------------- |
 | **`options`** | <code><a href="#finishoptions">FinishOptions</a></code> |
 
----
+--------------------
+
 
 ### Interfaces
 
+
+#### Function
+
+Creates a new function.
+
+| Prop            | Type                                          |
+| --------------- | --------------------------------------------- |
+| **`prototype`** | <code>any</code>                              |
+| **`length`**    | <code>number</code>                           |
+| **`arguments`** | <code>any</code>                              |
+| **`caller`**    | <code><a href="#function">Function</a></code> |
+
+| Method       | Signature                                                                            | Description                                                                                                                                                                                                              |
+| ------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **apply**    | (this: <a href="#function">Function</a>, thisArg: any, argArray?: any) =&gt; any     | Calls the function, substituting the specified object for the this value of the function, and the specified array for the arguments of the function.                                                                     |
+| **call**     | (this: <a href="#function">Function</a>, thisArg: any, ...argArray: any[]) =&gt; any | Calls a method of an object, substituting another object for the current object.                                                                                                                                         |
+| **bind**     | (this: <a href="#function">Function</a>, thisArg: any, ...argArray: any[]) =&gt; any | For a given function, creates a bound function that has the same body as the original function. The this object of the bound function is associated with the specified object, and has the specified initial parameters. |
+| **toString** | () =&gt; string                                                                      | Returns a string representation of a function.                                                                                                                                                                           |
+
+
 #### FinishOptions
 
-| Prop         | Type                |
-| ------------ | ------------------- |
-| **`taskId`** | <code>string</code> |
+| Prop         | Type                                              |
+| ------------ | ------------------------------------------------- |
+| **`taskId`** | <code><a href="#callbackid">CallbackID</a></code> |
+
+
+### Type Aliases
+
+
+#### CallbackID
+
+<code>string</code>
 
 </docgen-api>
 
