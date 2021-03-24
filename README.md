@@ -75,7 +75,7 @@ App.addListener('appStateChange', ({ isActive }) => {
 ### beforeExit(...)
 
 ```typescript
-beforeExit(cb: Function) => CallbackID
+beforeExit(cb: () => void) => CallbackID
 ```
 
 Call this method when the app moves to the background.
@@ -85,9 +85,9 @@ On **iOS** this method should be finished in less than 3 minutes.
 
 Only available for Android and iOS.
 
-| Param    | Type                                          |
-| -------- | --------------------------------------------- |
-| **`cb`** | <code><a href="#function">Function</a></code> |
+| Param    | Type                       |
+| -------- | -------------------------- |
+| **`cb`** | <code>() =&gt; void</code> |
 
 **Returns:** <code>string</code>
 
@@ -113,25 +113,6 @@ Only available for Android and iOS.
 
 
 ### Interfaces
-
-
-#### Function
-
-Creates a new function.
-
-| Prop            | Type                                          |
-| --------------- | --------------------------------------------- |
-| **`prototype`** | <code>any</code>                              |
-| **`length`**    | <code>number</code>                           |
-| **`arguments`** | <code>any</code>                              |
-| **`caller`**    | <code><a href="#function">Function</a></code> |
-
-| Method       | Signature                                                                            | Description                                                                                                                                                                                                              |
-| ------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **apply**    | (this: <a href="#function">Function</a>, thisArg: any, argArray?: any) =&gt; any     | Calls the function, substituting the specified object for the this value of the function, and the specified array for the arguments of the function.                                                                     |
-| **call**     | (this: <a href="#function">Function</a>, thisArg: any, ...argArray: any[]) =&gt; any | Calls a method of an object, substituting another object for the current object.                                                                                                                                         |
-| **bind**     | (this: <a href="#function">Function</a>, thisArg: any, ...argArray: any[]) =&gt; any | For a given function, creates a bound function that has the same body as the original function. The this object of the bound function is associated with the specified object, and has the specified initial parameters. |
-| **toString** | () =&gt; string                                                                      | Returns a string representation of a function.                                                                                                                                                                           |
 
 
 #### FinishOptions

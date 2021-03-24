@@ -9,8 +9,7 @@ export interface BackgroundTaskPlugin {
    *
    * Only available for Android and iOS.
    */
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  beforeExit(cb: Function): CallbackID;
+  beforeExit(cb: () => void): CallbackID;
   /**
    * Finish the current background task.
    * The OS will put the app to sleep.
