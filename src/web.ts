@@ -1,10 +1,13 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { BackgroundTaskPlugin } from './definitions';
+import type { BackgroundTaskPlugin, CallbackID, FinishOptions } from './definitions';
 
 export class BackgroundTaskWeb extends WebPlugin implements BackgroundTaskPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  public beforeExit(_cb: Function): CallbackID {
+    throw this.unimplemented('Not implemented on web.');
+  }
+
+  public finish(_options: FinishOptions): void {
+    throw this.unimplemented('Not implemented on web.');
   }
 }

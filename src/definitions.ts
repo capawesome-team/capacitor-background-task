@@ -1,3 +1,10 @@
+export type CallbackID = string;
+
 export interface BackgroundTaskPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  beforeExit(cb: Function): CallbackID;
+  finish(options: FinishOptions): void;
+}
+
+export interface FinishOptions {
+  taskId: CallbackID;
 }
