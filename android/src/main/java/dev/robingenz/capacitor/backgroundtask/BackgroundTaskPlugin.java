@@ -11,7 +11,7 @@ public class BackgroundTaskPlugin extends Plugin {
 
     private BackgroundTask implementation = new BackgroundTask();
 
-    @PluginMethod(returnType=PluginMethod.RETURN_CALLBACK)
+    @PluginMethod(returnType = PluginMethod.RETURN_CALLBACK)
     public void beforeExit(PluginCall call) {
         // No-op for now. Android support will be added in a later version.
         String callbackId = call.getCallbackId();
@@ -20,10 +20,9 @@ public class BackgroundTaskPlugin extends Plugin {
         call.resolve(ret);
     }
 
-    @PluginMethod()
+    @PluginMethod
     public void finish(PluginCall call) {
         // No-op for now. Android support will be added in a later version.
         call.resolve();
     }
-
 }

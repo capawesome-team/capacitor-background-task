@@ -2,8 +2,8 @@ import Foundation
 import UIKit
 
 @objc public class BackgroundTask: NSObject {
-    var taskIds: [String:UIBackgroundTaskIdentifier] = [:]
-    
+    var taskIds: [String: UIBackgroundTaskIdentifier] = [:]
+
     @objc public func beforeExit(_ callbackId: String) {
         var taskId = UIBackgroundTaskIdentifier.invalid
         taskId = UIApplication.shared.beginBackgroundTask {
@@ -13,7 +13,7 @@ import UIKit
         }
         self.taskIds[callbackId] = taskId
     }
-    
+
     @objc public func finish(_ callbackId: String) {
         guard let taskId = self.taskIds[callbackId] else {
             return
