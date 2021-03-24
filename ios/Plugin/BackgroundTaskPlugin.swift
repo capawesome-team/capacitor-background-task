@@ -9,19 +9,16 @@ import Capacitor
 public class BackgroundTaskPlugin: CAPPlugin {
     private let implementation = BackgroundTask()
 
-    @objc func beforeExit(_ call: CAPPluginCall) {
-        let taskId = UIApplication.shared.beginBackgroundTask {
-            // End the task if time expires.
-            UIApplication.shared.endBackgroundTask(taskId)
-            taskId = UIBackgroundTaskInvalid
-        }
+    @objc public func beforeExit(_ call: CAPPluginCall) {
+        implementation.beforeExit(call.callbackId)
         call.resolve()
     }
 
-    @objc func finish(_ call: CAPPluginCall) {
-        guard let taskId = call.getString("taskId") else {
+    @objc public func finish(_ call: CAPPluginCall) {
+        guard let callbackId = call.getString("taskId") else {
             call.reject("No taskId was provided.")
+            return
         }
-        UIApplication.shared.endBackgroundTask(taskId)
+        implementation.finish(callbackId)
     }
 }
