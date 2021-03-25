@@ -45,12 +45,12 @@ import { App } from '@capacitor/app';
 import { BackgroundTask } from '@robingenz/capacitor-background-task';
 
 App.addListener('appStateChange', ({ isActive }) => {
-  if (!isActive) {
+  if (isActive) {
     return;
   }
   // The app state has been changed to inactive.
   // Start the background task by calling `beforeExit`.
-  let taskId = BackgroundTask.beforeExit(async () => {
+  const taskId = BackgroundTask.beforeExit(async () => {
     // Run your code...
     // Finish the background task as soon as everything is done.
     BackgroundTask.finish({ taskId });
