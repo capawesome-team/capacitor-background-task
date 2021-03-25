@@ -7,9 +7,8 @@ import UIKit
     @objc public func beforeExit(_ callbackId: String) {
         var taskId = UIBackgroundTaskIdentifier.invalid
         taskId = UIApplication.shared.beginBackgroundTask {
-            // End the task if time expires.
-            self.taskIds.removeValue(forKey: callbackId)
-            UIApplication.shared.endBackgroundTask(taskId)
+            // Finish the task if time expires.
+            self.finish(callbackId)
         }
         self.taskIds[callbackId] = taskId
     }
@@ -18,6 +17,7 @@ import UIKit
         guard let taskId = self.taskIds[callbackId] else {
             return
         }
+        self.taskIds.removeValue(forKey: callbackId)
         UIApplication.shared.endBackgroundTask(taskId)
     }
 }
