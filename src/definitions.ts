@@ -9,7 +9,7 @@ export interface BackgroundTaskPlugin {
    *
    * Only available for Android and iOS.
    */
-  beforeExit(cb: () => void): CallbackID;
+  beforeExit(cb: () => void): Promise<CallbackID>;
   /**
    * Finish the current background task.
    * The OS will put the app to sleep.

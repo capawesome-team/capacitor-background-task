@@ -44,13 +44,13 @@ A working example can be found here: [robingenz/capacitor-plugin-demo](https://g
 import { App } from '@capacitor/app';
 import { BackgroundTask } from '@robingenz/capacitor-background-task';
 
-App.addListener('appStateChange', ({ isActive }) => {
+App.addListener('appStateChange', async ({ isActive }) => {
   if (isActive) {
     return;
   }
   // The app state has been changed to inactive.
   // Start the background task by calling `beforeExit`.
-  const taskId = BackgroundTask.beforeExit(async () => {
+  const taskId = await BackgroundTask.beforeExit(async () => {
     // Run your code...
     // Finish the background task as soon as everything is done.
     BackgroundTask.finish({ taskId });
@@ -75,7 +75,7 @@ App.addListener('appStateChange', ({ isActive }) => {
 ### beforeExit(...)
 
 ```typescript
-beforeExit(cb: () => void) => CallbackID
+beforeExit(cb: () => void) => Promise<CallbackID>
 ```
 
 Call this method when the app moves to the background.
@@ -89,7 +89,7 @@ Only available for Android and iOS.
 | -------- | -------------------------- |
 | **`cb`** | <code>() =&gt; void</code> |
 
-**Returns:** <code>string</code>
+**Returns:** <code>Promise&lt;string&gt;</code>
 
 --------------------
 

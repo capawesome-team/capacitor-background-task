@@ -9,7 +9,7 @@ import type {
 export class BackgroundTaskWeb
   extends WebPlugin
   implements BackgroundTaskPlugin {
-  public beforeExit(_cb: () => void): CallbackID {
+  public beforeExit(_cb: () => void): Promise<CallbackID> {
     throw this.unimplemented('Not implemented on web.');
   }
 
