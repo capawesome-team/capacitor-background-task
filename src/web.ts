@@ -9,8 +9,7 @@ import type {
 export class BackgroundTaskWeb
   extends WebPlugin
   implements BackgroundTaskPlugin {
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  public beforeExit(_cb: Function): CallbackID {
+  public beforeExit(_cb: () => void): CallbackID {
     throw this.unimplemented('Not implemented on web.');
   }
 
