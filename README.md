@@ -135,7 +135,7 @@ Only available for Android and iOS.
 
 ### iOS
 
-On **iOS** the [BackgroundTasks framework](https://developer.apple.com/documentation/backgroundtasks) is used.
+On **iOS** the [UIKit framework](https://developer.apple.com/documentation/uikit) is used.
 Read more about the implementation and any limitations [here](https://developer.apple.com/documentation/uikit/app_and_environment/scenes/preparing_your_ui_to_run_in_the_background/extending_your_app_s_background_execution_time).
 
 ### Android
