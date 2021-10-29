@@ -5,7 +5,7 @@ export interface BackgroundTaskPlugin {
    * Call this method when the app moves to the background.
    * It allows the app to continue running a task in the background.
    *
-   * On **iOS** this method should be finished in less than 3 minutes.
+   * On **iOS** this method should be finished in less than 30 seconds.
    *
    * Only available for Android and iOS.
    */
