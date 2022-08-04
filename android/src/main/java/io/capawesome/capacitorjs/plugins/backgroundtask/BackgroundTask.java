@@ -1,4 +1,4 @@
-package dev.robingenz.capacitor.backgroundtask;
+package io.capawesome.capacitorjs.plugins.backgroundtask;
 
 public class BackgroundTask {
 

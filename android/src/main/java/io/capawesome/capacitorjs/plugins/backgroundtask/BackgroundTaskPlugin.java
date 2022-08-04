@@ -1,4 +1,4 @@
-package dev.robingenz.capacitor.backgroundtask;
+package io.capawesome.capacitorjs.plugins.backgroundtask;
 
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;

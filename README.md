@@ -1,20 +1,18 @@
 <p align="center"><br><img src="https://user-images.githubusercontent.com/236501/85893648-1c92e880-b7a8-11ea-926d-95355b8175c7.png" width="128" height="128" /></p>
 <h3 align="center">Background Task</h3>
-<p align="center"><strong><code>@robingenz/capacitor-background-task</code></strong></p>
+<p align="center"><strong><code>@capawesome/capacitor-background-task</code></strong></p>
 <p align="center">
   Capacitor plugin for running background tasks. 
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/maintenance/yes/2022?style=flat-square" />
-  <a href="https://github.com/robingenz/capacitor-background-task/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/workflow/status/robingenz/capacitor-background-task/CI/main?style=flat-square" /></a>
-  <a href="https://www.npmjs.com/package/@robingenz/capacitor-background-task"><img src="https://img.shields.io/npm/l/@robingenz/capacitor-background-task?style=flat-square" /></a>
+  <a href="https://github.com/capawesome-team/capacitor-background-task/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/workflow/status/capawesome-team/capacitor-background-task/CI/main?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@capawesome/capacitor-background-task"><img src="https://img.shields.io/npm/l/@capawesome/capacitor-background-task?style=flat-square" /></a>
 <br>
-  <a href="https://www.npmjs.com/package/@robingenz/capacitor-background-task"><img src="https://img.shields.io/npm/dw/@robingenz/capacitor-background-task?style=flat-square" /></a>
-  <a href="https://www.npmjs.com/package/@robingenz/capacitor-background-task"><img src="https://img.shields.io/npm/v/@robingenz/capacitor-background-task?style=flat-square" /></a>
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href="#contributors-"><img src="https://img.shields.io/badge/all%20contributors-1-orange?style=flat-square" /></a>
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+  <a href="https://www.npmjs.com/package/@capawesome/capacitor-background-task"><img src="https://img.shields.io/npm/dw/@capawesome/capacitor-background-task?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@capawesome/capacitor-background-task"><img src="https://img.shields.io/npm/v/@capawesome/capacitor-background-task?style=flat-square" /></a>
+  <a href="https://github.com/capawesome-team"><img src="https://img.shields.io/badge/part%20of-capawesome-%234f46e5?style=flat-square" /></a>
 </p>
 
 ## Maintainers
@@ -23,10 +21,18 @@
 | ---------- | ----------------------------------------- | --------------------------------------------- |
 | Robin Genz | [robingenz](https://github.com/robingenz) | [@robin_genz](https://twitter.com/robin_genz) |
 
+## Sponsors
+
+This is an MIT-licensed open source project. 
+It can grow thanks to the support by these awesome people. 
+If you'd like to join them, please read more [here](https://github.com/sponsors/capawesome-team).  
+
+<!-- sponsors --><!-- sponsors -->
+
 ## Installation
 
 ```bash
-npm install @robingenz/capacitor-background-task
+npm install @capawesome/capacitor-background-task
 npx cap sync
 ```
 
@@ -42,7 +48,7 @@ A working example can be found here: [robingenz/capacitor-plugin-demo](https://g
 
 ```typescript
 import { App } from '@capacitor/app';
-import { BackgroundTask } from '@robingenz/capacitor-background-task';
+import { BackgroundTask } from '@capawesome/capacitor-background-task';
 
 App.addListener('appStateChange', async ({ isActive }) => {
   if (isActive) {
@@ -145,8 +151,8 @@ It's planned to add the support in the near future.
 
 ## Changelog
 
-See [CHANGELOG.md](https://github.com/robingenz/capacitor-background-task/blob/master/CHANGELOG.md).
+See [CHANGELOG.md](https://github.com/capawesome-team/capacitor-background-task/blob/master/CHANGELOG.md).
 
 ## License
 
-See [LICENSE](https://github.com/robingenz/capacitor-background-task/blob/master/LICENSE).
+See [LICENSE](https://github.com/capawesome-team/capacitor-background-task/blob/master/LICENSE).
